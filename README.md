@@ -34,7 +34,7 @@ Here I have implemented this flag such that `pipenv -C <path> ...` will set `PIP
 
 It is much cleaner to restrict the initialization of virtual environments to a single command, a bit like `git init` for initializing git repositories. In that manner, this patch will abort if a command that is not `install` is invoked and virtual environment does not exist. 
 
-(Note that due to implementation details and for simplicity sake, the patch will actually abort if a command does not contain the word `install` and the virtual environment does not exist. So if someone runs `pipenv run install` that would unnecessarily create a virtual environment. The assumption is that few such commands will be invoked.)
+(Note that due to implementation details and for simplicity sake, the patch will actually abort if a command does not contain the word `install` and the virtual environment does not exist. So if someone runs `pipenv run pip install foo` that would unnecessarily create a virtual environment if one did not exist. The assumption is that few such commands will be invoked.)
 
 ## Implementation details
 
