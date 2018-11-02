@@ -35,7 +35,7 @@ def venv_symlink(workon, venv_name):
     return handle_venv_symlink
 
 @click.command(
-    context_settings=dict(ignore_unknown_options=True, allow_extra_args=True)
+    context_settings=dict(ignore_unknown_options=True, allow_extra_args=True, help_option_names=[])
 )
 @click.option(
     "working_dir",
